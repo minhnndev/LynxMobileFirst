@@ -1,9 +1,16 @@
-import { root } from '@lynx-js/react'
+import { root } from "@lynx-js/react";
 
-import { App } from './App.js'
+import { App } from "./App.js";
 
-root.render(<App />)
+import { queryClient } from "./api/core/queryClient.js";
+import { PersistQueryClientProvider } from "./queries/QueryClientProvider.jsx";
+
+root.render(
+  <PersistQueryClientProvider client={queryClient}>
+    <App />
+  </PersistQueryClientProvider>
+);
 
 if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
+  import.meta.webpackHot.accept();
 }

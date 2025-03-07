@@ -11,7 +11,7 @@ import BSContent from "./components/BSContent.jsx";
 
 export function App() {
   const [alterLogo, setAlterLogo] = useState(false);
-
+  const [locale, setLocale] = useState("en");
   const [open, setOpen] = useState<boolean>(true);
 
   const handleDismissed = () => {
@@ -22,7 +22,6 @@ export function App() {
     setOpen(true);
   };
 
-  const [locale, setLocale] = useState("en");
   const getNextLocale = (locale: string) => {
     const locales = ["en", "vn-VN"];
     const index = locales.indexOf(locale);
@@ -47,7 +46,7 @@ export function App() {
   //     console.log("🚀 stored locale:", storedLocale);
   //     setLocale(storedLocale);
   //   }
-  // }, []);
+  // }, [locale]);
 
   return (
     <view>
