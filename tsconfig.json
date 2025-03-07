@@ -3,14 +3,14 @@
     "jsx": "preserve",
 
     "module": "node16",
-    "moduleResolution": "node16",
+    "moduleResolution": "nodenext",
 
     "strict": true,
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
 
     "esModuleInterop": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
-  "exclude": ["dist/"],
+  "exclude": ["dist/"]
 }
