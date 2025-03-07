@@ -15,8 +15,13 @@ export default defineConfig({
     pluginReactLynx(),
   ],
   source: {
+    entry: "./index.tsx",
     alias: {
-      "lynx-uikit$": "./lynx-uikit/index.js",
+      "lynx-uikit$": "./lynx-uikit",
+      "@assets": "./assets",
+      "@components": "./components",
+      "@pages": "./pages",
+      "@i18n": "./i18n",
     },
   },
 });

@@ -1,4 +1,4 @@
-const BSContent = ({ onPress }: { onPress: () => void }) => {
+const BSContent = ({ onPress }: { onPress?: () => void }) => {
   return (
     <view
       style={{

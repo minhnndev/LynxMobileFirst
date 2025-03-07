@@ -1,6 +1,6 @@
 import type { ReactNode } from "@lynx-js/react";
 import type { CSSProperties } from "@lynx-js/types";
-import "./styles.scss";
+import "./styles.css";
 
 function SafeArea({
   children,

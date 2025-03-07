@@ -1,6 +1,7 @@
 :root {
-  background-color: #000;
-  --color-text: #fff;
+  --color-background: #f5f5f5;
+  --color-text: #000;
+  --color-button: #ff6448;
 }
 
 .Background {
@@ -17,28 +18,21 @@
   height: 200vw;
   top: -60vw;
   transform: rotate(15.25deg);
+  z-index: -1;
 }
 
 .App {
   position: relative;
-  min-height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* z-index: 100; */
 }
 
 text {
   color: var(--color-text);
-}
-
-.Banner {
-  flex: 5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
 }
 
 .Logo {
@@ -54,12 +48,6 @@ text {
   animation: Logo--spin infinite 20s linear;
 }
 
-.Logo--lynx {
-  width: 100px;
-  height: 100px;
-  animation: Logo--shake infinite 0.5s ease;
-}
-
 @keyframes Logo--spin {
   from {
     transform: rotate(0deg);
@@ -67,25 +55,6 @@ text {
   to {
     transform: rotate(360deg);
   }
-}
-
-@keyframes Logo--shake {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.Content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .Arrow {
@@ -105,14 +74,14 @@ text {
   margin-bottom: 8px;
 }
 
-.Description {
-  font-size: 20px;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 15rpx;
-}
-
-.Hint {
-  font-size: 12px;
-  margin: 5px;
-  color: rgba(255, 255, 255, 0.65);
+.Button {
+  background: var(--color-button);
+  color: var(--color-text);
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
 }

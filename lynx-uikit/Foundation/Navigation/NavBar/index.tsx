@@ -1,6 +1,5 @@
-import "./styles.scss";
-
-import backIcon from "./assets/back.png";
+import "./styles.css";
+import backIcon from "../assets/back.png";
 
 interface NavBarProps {
   onBack?: () => void;
@@ -11,7 +10,10 @@ interface NavBarProps {
 export default function NavBar({ onBack, title }: NavBarProps) {
   return (
     <view className="nav-bar">
-      <image className="left-icon" src={backIcon} bindtap={onBack} />
+      <view className="left" >
+        {/* <ChevronLeft className="left-icon" /> */}
+        <image className="left-icon" src={backIcon} bindtap={onBack} />
+      </view>
       <text className="nav-title">{title}</text>
     </view>
   );

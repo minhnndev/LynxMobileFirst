@@ -1,5 +1,12 @@
 import Routers from "./routes/index.jsx";
 
-export function App() {
-  return <Routers />;
-}
+import { queryClient } from "./api/core/queryClient.js";
+import { PersistQueryClientProvider } from "./queries/QueryClientProvider.jsx";
+
+export const App = () => {
+  return (
+    <PersistQueryClientProvider client={queryClient}>
+      <Routers />
+    </PersistQueryClientProvider>
+  );
+};
