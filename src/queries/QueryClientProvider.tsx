@@ -1,11 +1,7 @@
-import { useRef, useEffect, useState } from "@lynx-js/react";
+import { type PersistQueryClientOptions } from "@tanstack/react-query-persist-client";
 
 import {
-  persistQueryClient,
-  type PersistQueryClientOptions,
-} from "@tanstack/react-query-persist-client";
-
-import {
+  useIsRestoring,
   QueryClientProvider,
   IsRestoringProvider,
   type QueryClientProviderProps,
@@ -23,37 +19,7 @@ export const PersistQueryClientProvider = ({
   onSuccess,
   ...props
 }: PersistQueryClientProviderProps): JSX.Element => {
-  const [isRestoring, setIsRestoring] = useState(true);
-  const refs = useRef({ persistOptions, onSuccess });
-
-  useEffect(() => {
-    refs.current = { persistOptions, onSuccess };
-  });
-
-  useEffect(() => {
-    let isStale = false;
-    setIsRestoring(true);
-    const { persistOptions } = refs.current;
-    if (!persistOptions?.persister) {
-      throw new Error("PersistQueryClientProvider: persister is required");
-    }
-    const [unsubscribe, promise] = persistQueryClient({
-      ...persistOptions,
-      queryClient: client,
-    });
-
-    promise.then(() => {
-      if (!isStale) {
-        refs.current.onSuccess?.();
-        setIsRestoring(false);
-      }
-    });
-
-    return () => {
-      isStale = true;
-      unsubscribe();
-    };
-  }, [client]);
+  const isRestoring = useIsRestoring();
 
   return (
     <QueryClientProvider client={client} {...props}>

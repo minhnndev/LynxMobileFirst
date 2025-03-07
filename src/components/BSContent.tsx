@@ -194,7 +194,7 @@ const BSContent = ({ onPress }: { onPress: () => void }) => {
           paddingBottom: "10px",
         }}
       >
-        Try it
+        Close
       </text>
     </view>
   );

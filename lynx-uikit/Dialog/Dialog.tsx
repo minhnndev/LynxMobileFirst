@@ -1,3 +1,4 @@
+import React from "react";
 import { type ReactElement, useEffect, useState } from "@lynx-js/react";
 
 import "./Dialog.css";
