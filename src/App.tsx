@@ -1,8 +1,8 @@
 import "./App.css";
 import { i18n } from "./i18n/i18n.js";
 import { useCallback, useEffect, useState } from "@lynx-js/react";
-import { LynxLocalStorage } from "../lynx/LocalStorage/LynxLocalStorage.js";
-import Dialog from "../lynx/Dialog/Dialog.jsx";
+
+import { LynxLocalStorage, Dialog } from "../lynx/index.js";
 
 import arrow from "./assets/arrow.png";
 import lynxLogo from "./assets/lynx-logo.png";
